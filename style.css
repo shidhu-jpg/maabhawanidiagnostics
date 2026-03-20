@@ -314,4 +314,122 @@ display: block;
     gap: 15px;
 }
 
+/* --- 2x2 SHINY LOGO GRID --- */
+.features-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 40px 10px;
+    background-color: #f8fbff; /* Soft page background seen in flyer */
+    gap: 15px; /* Adjust spacing as needed */
+}
+
+.feature-item {
+    background: #ffffff;
+    flex: 0 0 calc(50% - 20px); /* 2 items per row */
+    max-width: 280px;
+    aspect-ratio: 1 / 1; /* Keeps them perfectly square */
+    
+    padding: 20px;
+    text-align: center;
+    border-radius: 15px;
+    border: 1px solid #e0e6ed;
+    box-shadow: 0 8px 20px rgba(0, 51, 102, 0.08);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+}
+
+/* --- THE LOGO BACKGROUND (The actual "Wall" you want to change) --- */
+.logo-bg-wrapper {
+    width: 80px; 
+    height: 80px;
+    margin-bottom: 15px;
+    border-radius: 12px; /* Smooth rounded background for the image */
+    
+    position: relative; /* REQUIRED: To allow the logo overlay to float */
+    overflow: hidden;
+    
+    /* 1. ADD YOUR BACKGROUND IMAGE PATH HERE */
+    background-image: url('images/logoback.png'); 
+    background-size: cover;
+    background-position: center;
+    
+    /* 2. ADD A "SHINY GLASS" OVERLAY TINT for contrast */
+    background-color: rgba(0, 51, 102, 0.4); 
+    background-blend-mode: overlay;
+    
+    /* Give it a premium border/glow */
+    border: 2px solid #003366;
+    box-shadow: 0 4px 10px rgba(0, 51, 102, 0.2);
+}
+
+/* --- THE LOGO OVERLAY (Floats on top of the image) --- */
+.logo-overlay {
+    position: absolute; /* REQUIRED: To float on top of the background */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centers the logo icon exactly */
+    
+    width: 60%; /* Icon size relative to the background square */
+    height: auto;
+    object-fit: contain;
+    
+    /* Makes the logo icon stand out against the background image */
+    filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3)); 
+    z-index: 2; /* Ensures it stays on top of the background image */
+}
+
+/* --- TEXT STYLING (Matched from flyer) --- */
+.feature-title {
+    font-weight: 800;
+    color: #003366;
+    font-size: 16px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.feature-desc {
+    font-size: 11px;
+    color: #555;
+    line-height: 1.4;
+}
  
+
+/* --- MAIN PAGE BACKGROUND --- */
+body {
+    font-family: 'Segoe UI', sans-serif; /* Keep your font */
+    color: #333;
+    
+    /* 1. APPLY YOUR BACKGROUND IMAGE TO THE WHOLE PAGE */
+    background-image: url('images/logoback.png'); 
+    
+    /* 2. ENSURE IT COVERS THE WHOLE SCREEN AND REPEATS IF NEEDED */
+    background-size: cover;       /* Or try 'contain' or 'repeat' depending on image pattern */
+    background-position: center;  /* Centers the background */
+    background-repeat: repeat;    /* Use repeat if it's a small tile pattern */
+    background-attachment: fixed; /* Optional: keeps background fixed when scrolling */
+    
+    /* Fallback color if image fails to load */
+    background-color: #f8fbff; 
+}
+
+/* --- THE MAIN SECTION CONTAINER --- */
+.features-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 60px 20px;
+    
+    /* 3. ENSURE THIS SECTION'S BACKGROUND IS TRANSPARENT */
+    background-color: transparent !important; /* Forces transparency so body image shows */
+    
+    gap: 15px;
+}
