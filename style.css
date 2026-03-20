@@ -231,3 +231,87 @@ display: block;
 }
 
 
+/* --- FINAL LEGAL FOOTER --- */
+.final-legal-footer {
+    background-color: #003366;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 10px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    margin-bottom: 70px; /* Space so the floating bar doesn't cover text */
+}
+
+/* --- FLOATING CONTACT BAR --- */
+.floating-contact-bar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 70px;
+    background: #ffffff;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    padding: 10px;
+}
+
+.contact-btn {
+    flex: 1;
+    margin: 0 5px;
+    height: 50px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 14px;
+    transition: transform 0.2s ease;
+}
+
+.contact-btn:active {
+    transform: scale(0.95);
+}
+
+.contact-btn img {
+    width: 20px;
+    margin-right: 8px;
+}
+
+/* Call Button Styling */
+.call-btn {
+    background-color: #003366; /* Your brand blue */
+    color: #ffffff;
+}
+
+/* WhatsApp Button Styling */
+.whatsapp-btn {
+    background-color: #25D366; /* Official WhatsApp Green */
+    color: #ffffff;
+}
+
+/* Desktop Fix: Make the bar thinner on large screens */
+@media (min-width: 768px) {
+    .floating-contact-bar {
+        max-width: 400px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 20px 20px 0 0;
+    }
+}
+
+
+ /* --- 2x2 SHINY BLUE GRID --- */
+.features-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 40px 10px;
+    background-color: #f0f7ff; 
+    gap: 15px;
+}
+
+ 
