@@ -1,0 +1,233 @@
+
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+body {
+font-family: 'Segoe UI', sans-serif;
+background-color: #f8fbff;
+color: #333;
+}
+
+/* --- SECTION 1: TOP SCREENSHOT (Logo to Appointment) --- */
+.top-screenshot-banner {
+width: 100%;
+display: block;
+}
+
+.top-screenshot-banner img {
+width: 100%;
+height: auto;
+display: block; /* Removes bottom gap */
+}
+
+/* --- SECTION 2: MIDDLE CONTENT (Heritage Logo) --- */
+.middle-content {
+padding: 40px 20px;
+display: flex;
+justify-content: center;
+align-items: center;
+background: #ffffff; 
+}
+
+.heritage-card {
+width: 100%;
+max-width: 450px;
+border: 3px solid #003366;
+border-radius: 20px;
+box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+padding: 20px;
+text-align: center;
+}
+
+.heritage-card img {
+max-width: 100%;
+height: auto;
+}
+
+/* --- SECTION 3: FOOTER SCREENSHOT (Diagnostic Qualities) --- */
+.footer-screenshot {
+width: 100%;
+border-top: 5px solid #003366; /* Matching the blue theme */
+}
+
+.footer-screenshot img {
+width: 100%;
+height: auto;
+display: block;
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+.middle-content {
+    padding: 20px 10px;
+}
+.heritage-card {
+    max-width: 90%;
+}
+}
+
+
+
+ /* --- 4-COLUMN SQUARE GRID --- */
+ /* --- 2x2 SQUARE GRID --- */
+.features-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centers the whole grid */
+    padding: 40px 10px;
+    background-color: #f0f7ff; 
+    gap: 15px; /* Space between the squares */
+}
+
+.feature-item {
+    background: #ffffff;
+    /* This forces 2 items per row (50% minus the gap) */
+    flex: 0 0 calc(50% - 20px); 
+    max-width: 300px; /* Limits size on large desktop screens */
+    aspect-ratio: 1 / 1; /* Keeps them as perfect squares */
+    
+    padding: 20px;
+    text-align: center;
+    border-radius: 15px;
+    border: 2px solid #003366; /* Matching your brand blue */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Icon inside the square */
+.feature-logo-wrapper {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.feature-logo-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.feature-title {
+    font-weight: 700;
+    color: #003366;
+    font-size: clamp(14px, 4vw, 18px); /* Responsive text size */
+    margin-bottom: 8px;
+}
+
+.feature-desc {
+    font-size: clamp(11px, 3vw, 13px);
+    color: #555;
+    line-height: 1.3;
+}
+
+/* Adjustments for very small phones */
+@media (max-width: 360px) {
+    .features-grid {
+        gap: 10px;
+    }
+    .feature-item {
+        padding: 10px;
+    }
+}
+
+/* --- FOOTER OVERLAY STYLING --- */
+.footer-screenshot {
+    width: 100%;
+    position: relative; /* Required for absolute positioning of text */
+    overflow: hidden;
+}
+
+.footer-screenshot img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.footer-overlay-content {
+    position: absolute;
+    /* This centers the text in the middle of the footer image */
+    top: 70%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    text-align: center;
+    width: 90%; /* Prevents text from hitting edges on mobile */
+    pointer-events: none; /* Allows clicks to pass through to the image if needed */
+}
+
+.overlay-title {
+    color: #ff1414;
+    font-size: clamp(1px, 10px); /* Responsive size */
+    font-weight: 800;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7); /* Makes text pop against the image */
+    margin-bottom: 5px;
+}
+
+.overlay-subtitle {
+    color: #ffd700; /* Premium Gold color */
+    font-size: clamp(14px, 3vw, 20px);
+    font-weight: 600;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+}
+.feature-item {
+    background: #ffffff;
+    flex: 0 0 calc(50% - 20px); 
+    max-width: 280px;
+    aspect-ratio: 1 / 1; 
+    padding: 25px 15px;
+    text-align: center;
+    border-radius: 20px; /* Softer rounded corners */
+    
+    /* Remove the solid border and use a premium shadow instead */
+    border: none; 
+    box-shadow: 0 10px 30px rgba(0, 51, 102, 0.1); 
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-10px); /* Makes them feel interactive */
+    box-shadow: 0 15px 35px rgba(0, 51, 102, 0.15);
+}
+
+.feature-logo-wrapper {
+    width: 80px; /* Slightly larger for 3D detail visibility */
+    height: 80px;
+    margin-bottom: 15px;
+}
+
+.feature-logo-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    /* This adds a slight glow to the icons like the flyer */
+    filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.1));
+}
+
+.feature-title {
+    font-weight: 800;
+    color: #cc0000; /* Red from the flyer titles for better contrast */
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.feature-desc {
+    font-size: 13px;
+    color: #003366; /* Deep blue text */
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+
